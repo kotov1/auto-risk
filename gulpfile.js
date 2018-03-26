@@ -14,21 +14,14 @@ var gulp           = require('gulp'),
 		notify         = require("gulp-notify"),
 		rsync          = require('gulp-rsync');
 
-gulp.task('common-js', function() {
-	return gulp.src([
-		'app/js/common.js',
-		])
-	.pipe(concat('common.min.js'))
-	.pipe(uglify())
-	.pipe(gulp.dest('app/js'));
-});
 
-gulp.task('js', ['common-js'], function() {
+gulp.task('js', function() {
 	return gulp.src([
-		// 'app/libs/jquery/dist/jquery.min.js',
-		'app/js/common.min.js'
+		'app/libs/slick-carousel/slick/slick.min.js',
+		'app/libs/jquery.inputmask.js',
+		'app/js/common.js'
 		])
-	.pipe(concat('scripts.min.js'))
+	.pipe(concat('scripts.js'))
 	// .pipe(uglify())
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({stream: true}));
@@ -47,7 +40,7 @@ gulp.task('browser-sync', function() {
 gulp.task('sass', function() {
 	return gulp.src('app/sass/**/*.sass')
 	.pipe(sass({outputStyle: 'expand'}).on("error", notify.onError()))
-	.pipe(rename({suffix: '.min', prefix : ''}))
+	// .pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer(['last 15 versions']))
 	// .pipe(cleanCSS())
 	.pipe(gulp.dest('app/css'))
@@ -76,11 +69,11 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 		]).pipe(gulp.dest('dist'));
 
 	var buildCss = gulp.src([
-		'app/css/styles.min.css',
+		'app/css/styles.css',
 		]).pipe(gulp.dest('dist/css'));
 
 	var buildJs = gulp.src([
-		'app/js/scripts.min.js',
+		'app/js/scripts.js',
 		]).pipe(gulp.dest('dist/js'));
 
 	var buildFonts = gulp.src([

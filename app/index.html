@@ -20,7 +20,7 @@
 
 	<title>Title</title>
 
-	<link rel="stylesheet" href="css/styles.min.css">
+	<link rel="stylesheet" href="css/styles.css">
 
 	<!-- ROBOTO FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,900&amp;subset=cyrillic" rel="stylesheet">
@@ -30,15 +30,136 @@
 <body>
 
 
-	<div class="mycont">
-		<div class="myrow">
-			
+	<header class="my-topline">
+		<div class="mycont">
+			<div class="myrow myxrow">
+
+				<div class="mycol">
+					<img class="mylogo" src="img/logo.png" alt="Логотип">
+					<div class="mylogo-text"><span class="mycolor">auto-riks</span> services</div>
+				</div>
+
+				<div class="mycol">
+					<div class="my-topline-a">автосервис</div>
+					<div class="my-topline-b">акпп центр</div>
+				</div>
+
+				<div class="mycol mycol-menu">
+					<div class="mymenu-wrapper">
+						<div class="mymenu-btn"></div>
+						<ul class="mymenu">
+							<li><a href="#">ремонт</a>
+							</li>
+							<li><a href="#">цены</a>
+							</li>
+							<li><a href="#">оборудование</a>
+							</li>
+							<li><a href="#">о нас</a>
+							</li>
+							<li><a href="#">медиа</a>
+							</li>
+							<li><a href="#">выбрать сервис</a>
+							</li>
+							<li><span>контакты</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mycol">
+					<div class="my-topline-call">
+						<div class="mytel">
+							<noindex><a href="tel:74955555555">+7 (495) 555-55-55</a></noindex>
+						</div>
+						<button class="mybtn mybtn-call">заказать звонок</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</header>
+
+
+	<div class="myblock1">
+		<div class="mycont">
+			<div class="myblock1-img-wrap">
+				<img src="img/akpp.jpg" alt="АКПП" class="myimg myblock1-img">
+			</div>
+			<div class="myrow">
+				<div class="mycol mycol1">
+					<div class="myblock1-title myblock1-title1">ремонт коробок автомат</div>
+					<div class="myblock1-title myblock1-title2">любых автомобилей</div>
+					<div class="myblock1-title myblock1-title3">в специализированных центрах <span class="myblock1-changed mycolor">auto-riks</span></div>
+					<div class="myblock1-title myblock1-title4">с гарантией 2 года</div>
+					<div class="myblock1-footer cfx">
+						<div class="mycol myblock1-footer-mycol1">
+							<div class="myblock1-slider-box">
+								<div class="myblock1-slider">
+									<div class="slide myblock1-slide">
+										<img src="img/slider1-img.jpg" alt="Ремонт АКПП" class="myimg myblock1-slide-img">
+									</div>
+									<div class="slide myblock1-slide">
+										<img src="img/slider1-img.jpg" alt="Ремонт АКПП" class="myimg myblock1-slide-img">
+									</div>
+									<div class="slide myblock1-slide">
+										<img src="img/slider1-img.jpg" alt="Ремонт АКПП" class="myimg myblock1-slide-img">
+									</div>
+								</div>
+								<div class="slider-arrow slider1-arrow slider1-prev"></div>
+								<div class="slider-arrow slider1-arrow slider1-next"></div>
+							</div>
+						</div>
+
+						<div class="mycol myblock1-footer-mycol2">
+							<div class="myblock1-footer-div1">замена акпп</div>
+							<div class="myblock1-footer-div2">от <span class="myblock1-footer-price">9990</span> руб.</div>
+							<div class="myblock1-footer-div3">Подробнее...</div>
+						</div>
+
+						<div class="myblock1-info">
+							<img class="myimg" src="img/remont-akpp.jpg" alt="Ремонт АКПП">
+							<div class="myblock1-info-text-block">
+								<div class="myblock1-info-text1">Особенности замены АКПП</div>
+								<div class="myblock1-info-text2">Первым делом осуществляется процесс диагностики автоматической трансмиссии, который поможет выявить причину неисправности или поломки. если в это время будут замечены неисправности, то в автотехцентре будут рады помочь восстановить прежние характеристики автомобиля.</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="mycol mycol2">
+					<div class="myblock1-forma">
+						<div class="myblock1-forma-div1">оставьте заявку</div>
+						<div class="myblock1-forma-div2">для расчета ремонта и восстановления</div>
+						<div class="myblock1-forma-div3 mycolor">АКПП</div>
+						<form action="#">
+							<input type="hidden" name="project_name" value="AUTO-RIKS">
+							<input type="hidden" name="admin_email" value="test@gmail.com">
+							<input type="hidden" name="form_subject" value="Заявка на расчет ремонта">
+
+							<input type="tel" class="phone forma-phone" name="Телефон"  placeholder="Введите ваш телефон" required>
+							<button type="submit" class="mybtn forma-mybtn">Расчитать</button>
+						</form>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
 
-
-
+	<div class="myblock2">
+		<div class="mycont">
+			<div class="myrow">
+				<div class="mycol">
+					<div class="carservice-card mfp-btn-form-1">
+						<div class="carservice-card-title">Медведково</div>
+						<div class="card-hidden-text">Ремонт АКПП</div>
+						<div class="carservice-card-tel"><a href="tel:+74999999999">+7 (499) 999-**-**</a></div>
+						<div class="carservice-card-more">Подробнее...</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
@@ -59,7 +180,7 @@
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js"><\/script>')</script>
 
-	<script src="js/scripts.min.js"></script>
+	<script src="js/scripts.js"></script>
 
 </body>
 </html>
