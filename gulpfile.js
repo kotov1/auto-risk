@@ -17,6 +17,7 @@ var gulp           = require('gulp'),
 
 gulp.task('js', function() {
 	return gulp.src([
+		'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
 		'app/libs/slick-carousel/slick/slick.min.js',
 		'app/libs/jquery.inputmask.js',
 		'app/js/common.js'
