@@ -24,7 +24,6 @@
 			&::before
 				display: none
 				   	   
-
 	.mymenu-btn
 		transition: all .25s
 		content: ""
@@ -106,7 +105,9 @@
 	// ================================
 
 
-	.my-topline
+	.my-line
+		height: auto
+		
 		.mycol-menu
 			position: absolute
 			padding: 0
@@ -115,7 +116,7 @@
 
 
 
-	.myblock1
+	.myblock-main
 		.mycol1, .mycol2
 			padding-top: 70px
 		&-img-wrap
@@ -135,17 +136,20 @@
 
 
 
-
 	.myblock5
 		background-image: none
 		.mytitle
 			padding: 0 0 30px
 
 
-	.myblock8-content
+
+
+
+	.myblock7-content
 		padding: 10px 0 40px
-	.myblock8-mybtn-wrap
+	.myblock7-mybtn-wrap
 		padding: 20px 100px 0 0
+
 
 
 
@@ -153,14 +157,34 @@
 		padding: 0
 
 
+
+
+	footer
+		.mymenu-wrapper
+			display: none
+
+
+
+	.liveinternet-counter
+		top: 50%
+		transform: translateY(-50%)
+		right: 15px
+
+
 	/**/
+
+
+
+
+
+
 
 
 
 @media only screen and (max-width : 991px)
 
 
-	.myblock1
+	.myblock-main
 		padding: 50px 0
 		&::before
 			left: 618px
@@ -181,7 +205,7 @@
 			text-align: center
 			
 
-		&-footer
+		.myblock1-footer
 			margin: 20px auto
 
 		&-forma
@@ -230,13 +254,13 @@
 
 
 
-	.myblock8-mycol
+	.myblock7-mycol
 		width: 100%
 		padding: 0
-	.myblock8-item
+	.myblock7-item
 		max-width: 400px
 		margin: 0 auto
-	.myblock8-mybtn-wrap
+	.myblock7-mybtn-wrap
 		text-align: center
 		padding: 20px 0 0
 
@@ -249,13 +273,33 @@
 		&:last-child
 			margin-bottom: 0
 
+
+
+	.myblock10-footer
+		margin-top: 20px
+		display: flex
+		justify-content: center
+	
+
+
+
 	/**/
+
+
+
+
+
+
+
+
+
 
 
 
 @media only screen and (max-width : 767px)
 
-	.my-topline
+	.my-line
+		padding-top: 10px
 		.myxrow
 			display: block
 
@@ -266,7 +310,10 @@
 
 
 
-	.myblock1
+	.myblock-main
+		&::before
+			display: none
+			
 		&-title1, &-title2, &-title4
 			font-size: 26px
 		&-title3
@@ -317,6 +364,7 @@
 
 
 
+
 	.myblock4
 		padding: 40px 0
 
@@ -331,6 +379,7 @@
 			width: 100%
 			max-width: 100%
 			padding: 0 15px
+
 
 
 
@@ -356,11 +405,98 @@
 			text-align: center
 
 
-	.myblock8-item-text
+
+	.textblock
+		table
+			min-width: auto
+			thead tr 
+				position: absolute
+				top: -9998em
+				left: -9998em
+
+			tr, td 
+				display: block
+				position: relative
+
+			td 
+				border: none
+				padding-left: 50%
+				background-image: none
+				border-bottom: 0.125em solid #354a5f
+				&::before 
+					content: attr(data-label)
+					display: inline-block
+					line-height: 1.45
+					font-weight: bold
+					margin-left: -95%
+					width: 100%
+					color: #000000
+				&::after
+					content: ''
+			tbody
+				tr:last-child
+					td:not(.picture-td)
+						border-bottom: 0.125em solid #354a5f
+					td:last-child
+						border-bottom: none
+
+			.picture-td
+				width: 100%
+				display: inline-block
+				position: absolute
+				top: 0
+				border: none
+				text-align: left
+				transform: translateX(-30px)
+
+		blockquote
+			width: 100%
+
+		ul
+			&.cols-2
+				li
+					width: 100%
+					margin-right: 0
+		.pl-68
+			padding: 0
+				
+
+
+
+
+	.myblock7-item-text
 		font-size: 16px
 			
 
+
+	.myblock10-footer
+		flex-direction: column
+		align-items: center
+	.myblock10-footer-mycol1, .myblock10-footer-mycol2
+		float: none
+	.myblock10-footer-mycol2
+		padding: 20px 0 0
+		
+
+	footer
+		padding-bottom: 50px
+	.liveinternet-counter
+		top: auto
+		bottom: -30px
+		transform: translate(50%, 0)
+		right: 50%
+
 	/**/
+
+
+
+
+
+
+
+
+
+
 
 
 @media only screen and (max-width : 575px)
@@ -368,23 +504,43 @@
 	.mytitle
 		font-size: 32px
 
-	.myblock1
+	.myblock-main
 		&-title1, &-title2, &-title4
 			font-size: 24px
 		&-title3
 			font-size: 34px
 
+
+	.textblock
+		blockquote
+			margin: 21px 0
+			padding-left: 0
+			padding-right: 0
+
 	/**/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media only screen and (max-width : 480px)
 
-	.myblock1
+	.myblock-main
 		&-title1, &-title2, &-title4
 			font-size: 18px
 		&-title3
 			font-size: 23px
-		&-footer
+		.myblock1-footer
 			&-mycol1,&-mycol2
 				width: 290px
 				float: none
@@ -410,17 +566,33 @@
 			form
 				max-width: 290px
 				margin: 10px auto 0
-		&-slider
+				padding: 0 !important
+		.myblock1-slider
 			margin: 0 auto
 
 
-
+	.textblock
+		table
+			font-size: 13px
+			td
+				&::before 
+					width: 95%
+			.picture-td
+				transform: translate(-27px,-1px)
 
 
 
 	.myblock9-mycol
 		width: 100%
 
+
+
+
+
+	.popup-zvonok
+		width: 100%
+		&-title
+			font-size: 32px
 	/**/
 
 

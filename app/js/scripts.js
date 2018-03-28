@@ -143,4 +143,14 @@ $(function() {
 	});
 
 
+
+	$('.').magnificPopup({
+		items: {
+			src: '.',
+			closeBtnInside: true,
+			type: 'inline'
+		}
+	});
+
+
 });

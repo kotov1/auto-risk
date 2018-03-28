@@ -75,28 +75,28 @@ td, th
 		box-sizing: border-box
 
 *::-webkit-input-placeholder
-	color: #666
+	color: #999
 	opacity: 1
 
 *:-moz-placeholder
-	color: #666
+	color: #999
 	opacity: 1
 
 *::-moz-placeholder
-	color: #666
+	color: #999
 	opacity: 1
 
 *:-ms-input-placeholder
-	color: #666
+	color: #999
 	opacity: 1
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #666
+	color: #999
 	outline: none
 body input:required:valid,
 body textarea:required:valid
-	color: #666
+	color: #999
 
 html, body
 	height: 100%
@@ -109,7 +109,7 @@ body
 	font: 400 16px/1.1 "Roboto", sans-serif
 	overflow-x: hidden
 
-.myimg
+.mypicture
 	display: block
 	max-width: 100%
 	height: auto
@@ -121,17 +121,17 @@ body
 	text-align: center
 
 // layout styles
-.mycont
+.mycont, .textblock
 	margin: 0 auto
 	padding: 0 15px
 @media (min-width: 768px)
-	.mycont
+	.mycont, .textblock
 		width: 750px
 @media (min-width: 992px)
-	.mycont
+	.mycont, .textblock
 		width: 990px
 @media (min-width: 1200px)
-	.mycont
+	.mycont, .textblock
 		width: 1140px
 
 .myrow
@@ -171,7 +171,6 @@ body
 		outline: none
 
 
-
 .mybtn.mybtn-call
 	margin-top: 5px
 	padding: 6px 0
@@ -184,8 +183,9 @@ body
 		box-shadow: 0 -1px 0 rgba(#000, .5)
 
 .forma-mybtn
-	padding: 13px 0
+	padding: 14px 0
 	font-size: 18px
+	line-height: 1
 	font-weight: 900
 	background-color: $selected-color	
 	color: #fff
@@ -197,11 +197,12 @@ body
 
 input.phone
 	width: 100%
-	padding: 13px
+	padding: 12px
 	text-align: center
 	border-radius: $bdr
 	border: none
 	outline: none
+	font-size: 18px
 	box-shadow: inset 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
 	background-color: #fff
 	&:focus
@@ -219,7 +220,8 @@ input.phone
 .mfp-close
 	display: block
 	position: absolute
-	top: -4px
+	top: 5px
+	right: 5px
 	font-size: 12px
 	width: 18px
 	height: 18px
@@ -301,6 +303,51 @@ input.phone
 	background-color: #fff
 	font-weight: 900
 	line-height: 1.1
+
+
+.mybreadcrumb
+	padding: 0 0 10px
+	list-style: none
+	border-radius: 4px
+	font-size: .875em
+	>
+		span
+			display: inline-block
+			+ span:before
+				padding: 0 2px
+				color: #000
+				content: "/"
+			a
+				color: #168abd
+				transition: all .2s linear
+				&:hover
+					color: #354a5f 
+					text-decoration: none
+					transition: all .2s linear
+
+			&:last-child
+				a
+					color: #000
+					text-decoration: none
+					cursor: default
+					&:hover
+						color: #000
+						
+.f-l
+	float: left
+.f-r	
+	float: right
+
+
+.popup
+	margin: 0 auto
+	background-color: #1c1c1c
+	box-shadow: inset 0 0 30px rgba(#000,.75)
+	overflow: hidden
+	color: #fff
+
+
+
 /*==================== GENERAL STYLES END ======================*/
 
 
@@ -313,8 +360,9 @@ input.phone
 
 /*STYLES START*/
 
-.my-topline
+.my-line
 	min-height: 80px
+	height: 1px
 	display: flex
 	align-items: center
 	background-color: #152133
@@ -336,14 +384,14 @@ input.phone
 	font-weight: 900
 
 
-.my-topline-a, .my-topline-b
+.my-line-a, .my-line-b
 	padding: 5px 3px
 	font-size: 12px
 	font-weight: 900
-.my-topline-a
+.my-line-a
 	color: #000
 	background-color: #fdf9ff
-.my-topline-b
+.my-line-b
 	background-color: #023b70
 
 
@@ -411,7 +459,18 @@ input.phone
 
 
 
+
+
+
+
+
 .myblock1
+	&::before
+		top: 30px
+	&-picture-wrap
+		top: 0
+
+.myblock-main
 	position: relative
 	padding-bottom: 30px
 	color: #fff
@@ -425,7 +484,6 @@ input.phone
 		height: 394px
 		position: absolute
 		left: 800px
-		top: 30px
 		background: url('../img/remontnik.png') no-repeat 0 0
 		background-size: 100% 100%
 		z-index: -1
@@ -435,16 +493,15 @@ input.phone
 		width: 100%
 		height: 100%
 		position: absolute
-		left: 0
 		top: 0
+		left: 0
 		background-color: rgba(#000, .5)
 		z-index: -1
 
-	&-img-wrap
+	&-picture-wrap
 		width: 656px
 		height: 437px
 		position: absolute
-		top: 0
 		left: 244px
 		z-index: -2
 		display: flex
@@ -467,14 +524,14 @@ input.phone
 	&-title3
 		font-size: 50px
 
-	&-slider
+	.myblock1-slider
 		width: 187px
 		height: 116px
 		border: 4px solid $selected-color
 		border-radius: $bdr
 		overflow: hidden
 
-	&-footer
+	.myblock1-footer
 		position: relative
 		max-width: 455px
 		margin-top: 23px
@@ -524,7 +581,7 @@ input.phone
 			font-weight: 900
 			text-align: center
 
-	&-info
+	.myblock1-info
 		display: none
 		width: 496px
 		height: 275px
@@ -558,7 +615,7 @@ input.phone
 		padding-right: 45px
 		
 	&-forma
-		padding: 20px 35px 25px
+		padding: 20px 0 25px
 		background-color: rgba(#fff,.15)
 		text-align: center
 		
@@ -582,9 +639,13 @@ input.phone
 
 		form
 			margin-top: 10px
-			padding: 0 5px
 			.phone
 				margin-bottom: 10px
+	.myblock1-forma
+		padding-left: 35px
+		padding-right: 35px
+		form
+			padding: 0 10px
 
 
 .slider1
@@ -699,16 +760,14 @@ input.phone
 		transition: all .2s linear
 
 
+
 /*========== .modal-form-wrap ========*/
+
+
+
 .popup-form-container
 	max-width: 735px
-	min-height: 560px
-	margin: 0 auto
-	padding: 15px
-	background-color: #1c1c1c
-	overflow: hidden
 	border-radius: 8px
-	color: #fff
 
 	.popup-use
 		margin-top: 10px
@@ -719,7 +778,6 @@ input.phone
 		width: 48.5%
 	.popup-form-mycol1
 		margin-right: 3%
-
 
 
 	.geo
@@ -793,8 +851,9 @@ input.phone
 		overflow: hidden
 
 
-.popup-form
-	position: relative
+	.popup-form
+		position: relative
+		padding: 15px
 
 	.popup-form-heading
 		color: #fff
@@ -803,7 +862,7 @@ input.phone
 
 
 
-	.form-popup
+	form
 		margin-top: 9px
 		&::after
 			content: ''
@@ -820,10 +879,19 @@ input.phone
 		outline: none
 		font-size: 14px
 		color: #004c78
-
-
+		&::-webkit-input-placeholder
+			color: #777
+		&:-moz-placeholder
+			color: #777
+		&::-moz-placeholder
+			color: #777
+		&:-ms-input-placeholder
+			color: #777
+		&:required:valid, &:required:invalid
+			color: #777
 		&:focus:required:invalid
 			box-shadow: inset 0 0 0 2px rgba(255,0,0,.5) 
+		
 
 	.popup-phone
 		width: 46%
@@ -880,8 +948,17 @@ input.phone
 		background-position: -121px 0
 		left: 6px
 	.slider-popup-next
-		background-position: 100% 0
+		background-position: -164px 0
 		right: 6px
+
+
+.popup-form-container
+	input
+		&:focus
+			box-shadow: inset 0px 3px 7px 0px rgba(0, 0, 0, 0.2);
+.popup-form
+	position: relative
+
 // ===========================================================
 
 
@@ -1039,7 +1116,152 @@ input.phone
 
 
 
-.myblock8
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+	.textblock
+		h1,h2,h3,h4,h5,h6
+			background-image: none!important
+
+.textblock
+	padding-top: 25px
+	padding-bottom: 25px
+	font-family: "Calibri Regular", "Roboto", sans-serif
+	h1,h2,h3,h4,h5,h6
+		margin-top: .7em
+		margin-bottom: .8em
+		text-align: center
+		line-height: 1.3
+		color: #560c0c
+		background: linear-gradient(to top, #591e1e, #2d0606)
+		background-position: 0 -5px
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+
+	p
+		margin: 20px 0
+		line-height: 1.251
+		text-indent: 35px
+		&:last-child
+			margin-bottom: 0
+
+	ul, ol
+		margin: 11px 0 0 0
+		padding: 0
+		font-size: 1em
+		line-height: 1.21
+		list-style-type: none
+		li
+			position: relative
+			padding-left: 10px
+			&:before
+				content: '-'
+				position: absolute
+				left: 0
+		&.cols-2
+			&:before, &:after
+				content: " "
+				display: table
+				clear: both
+			li
+				width: 40%
+				float: left
+				&:nth-child(2n+1)
+					margin-right: 20%
+
+
+	&-mypicture
+		width: 223px
+		height: 143px
+		margin-top: 20px
+		border: 2px solid #4f0d0d
+		border-radius: 10px
+		box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.75),inset 0px 3px 5px 0px rgba(0, 0, 0, 0.1)
+		&.f-l
+			margin-right: 15px
+		&.f-r
+			margin-left: 15px
+
+		
+	.mypicture-block
+		padding: 20px 10%
+		justify-content: center
+		flex-wrap: wrap
+		display: flex
+		.textblock-mypicture
+			margin: 0 6px 12px
+		&.mypicture-block-4inline
+			padding: 20px 5%
+
+
+
+	blockquote
+		width: 80%
+		margin-left: auto
+		margin-right: auto
+		position: relative
+		margin-top: 21px
+		margin-bottom: 21px
+		padding: 15px 55px
+		color: #000
+		font: italic 16px "Calibri Regular", "Roboto", sans-serif
+		text-align: center
+		&:before, &:after
+			height: 2px
+			position: absolute
+			font-size: 40px
+			color: #354a5f 
+			left: 35px
+			right: 35px
+			line-height: .5
+			background: linear-gradient(to right, #354a5f  45%, transparent 45%, transparent), linear-gradient(to right, transparent, transparent 56%, #354a5f  56%)
+			font-family: serif
+		&:before
+			content: "\201C"
+			top: 0
+		&:after
+			content: "\201D"
+			bottom: 0
+		p
+			margin: 0
+
+
+	table
+		border: 4px solid #354a5f
+		margin: 20px auto
+		border-radius: 4px
+		min-width: 535px
+		th,td
+			padding: 4px 0
+		th
+			padding: 6px 6px 6px 0
+			text-align: left
+			background-color: #354a5f
+			background-image: linear-gradient(180deg, #354a5f, #354a5f)
+			color: #fff
+			&:first-child
+				padding-left: 40px
+
+		td
+			border-bottom: 1px solid #354a5f
+			color: #000
+		tbody
+			tr:last-child
+				td
+					border-bottom: none
+					
+		.picture-td
+			width: 50px
+			text-align: center
+			
+
+
+	.pl-68
+		padding-left: 68px
+// ==================================================================
+
+
+
+
+.myblock7
 	position: relative
 	padding: 50px 0 0
 	background: url('../img/defects-bg.jpg') no-repeat 50% 0
@@ -1110,13 +1332,17 @@ input.phone
 		
 	&-mybtn
 		width: 200px
+// =========================================================
+
+
+
 
 
 
 
 
 .myblock9
-	padding-bottom: 50px
+	padding-bottom: 65px
 	background-image: linear-gradient(180deg, #fff, #cecece)
 
 	.mytitle
@@ -1144,8 +1370,12 @@ input.phone
 		&-title
 			margin-bottom: 20px
 			font-size: 18px
-			color: #ff0000
+			color: #560c0c
 			text-align: center
+			background: linear-gradient(to top, #591e1e, #2d0606)
+			background-position: 0 3px
+			-webkit-background-clip: text
+			-webkit-text-fill-color: transparent
 
 		&-picture-wrap
 			width: 178px
@@ -1163,10 +1393,207 @@ input.phone
 				z-index: -1
 
 			
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+	.myblock9-item-title
+		background-image: none!important
+
+// ===============================================================
 
 
 
 
+
+
+
+
+
+
+
+.myblock10
+	padding-top: 45px
+	&::before
+		top: 72px
+		
+	&-picture-wrap
+		top: 47px
+
+
+	&-footer
+		margin-top: 35px
+		&-mycol2
+			padding: 37px 0 0 20px
+		&-picture
+			width: 180px
+			height: 180px
+			background: url('../img/operator.png') no-repeat 50%
+
+		&-worktime
+			margin-bottom: 5px
+			font-size: 20px
+			color: #fff
+			text-transform: uppercase
+		&-workdays
+			font-size: 30px
+			color: #fff
+			text-transform: uppercase
+
+	&-forma
+		padding-left: 15px
+		padding-right: 15px
+		form
+			padding-left: 30px
+			padding-right: 30px
+// ======================================================
+
+
+
+
+footer
+	.mycont
+		position: relative
+// ======================================================						
+			
+
+.popup-zvonok
+	width: 365px
+
+	.popup-form
+		padding: 40px 20px 60px
+
+	&-title
+		margin-bottom: 15px
+		font-size: 36px
+		text-transform: uppercase
+		font-weight: 900
+		text-align: center
+	&-info
+		font-size: 18px
+		text-align: center
+		font-weight: 400
+		text-transform: uppercase
+		
+
+	form
+		margin: 40px auto 0
+		width: 80%
+
+	input
+		width: 100%
+		padding: 6px 10px 6px 40px
+		background-color: transparent
+		border-bottom: 1px solid #fff
+		border-radius: 0
+		color: #fff
+		&::-webkit-input-placeholder
+			color: #fff
+		&:-moz-placeholder
+			color: #fff
+		&::-moz-placeholder
+			color: #fff
+		&:-ms-input-placeholder
+			color: #fff
+		&:required:valid, &:required:invalid
+			color: #fff
+		&.phone
+			text-align: left
+			box-shadow: none
+			
+
+	label
+		position: relative
+		&::before
+			content: ''
+			display: block
+			height: 18px
+			width: 23px
+			position: absolute
+			left: 0
+			top: 0
+			background: url('../img/icons.png') no-repeat
+			z-index: 0
+	.name-label
+		&::before
+			background-position: -216px 0
+	.phone-label
+		&::before
+			background-position: -241px 0
+
+
+	.forma-mybtn
+		margin-top: 40px
+// ========================================
+
+
+
+.popup-zayavka
+	width: 574px
+	.popup-form
+		padding: 40px 20px 60px
+
+	&-title
+		font-weight: 900
+		text-align: center	
+		&-main
+			font-size: 26px
+
+	form
+		width: 80%
+		margin: 20px auto
+
+
+	label
+		font-weight: 900
+	input, textarea
+		width: 100%
+		height: 37px
+		border-radius: 5px
+		margin-bottom: 9px
+		padding: 11px 14px
+		background-color: #fff
+		border: none
+		border-radius: 4px
+		outline: none
+		font-size: 14px
+		text-align: left
+		color: #777
+		
+		&::-webkit-input-placeholder
+			color: #777
+		&:-moz-placeholder
+			color: #777
+		&::-moz-placeholder
+			color: #777
+		&:-ms-input-placeholder
+			color: #777
+		&:required:valid, &:required:invalid
+			color: #777
+		&:focus:required:invalid
+			box-shadow: inset 0 0 0 2px rgba(255,0,0,.5)
+
+	textarea
+		resize: none
+
+	.popup-mycol1
+		width: 25%
+	.popup-mycol2
+		width: 75%
+
+	.forma-mybtn
+		width: 123px
+		margin: 0 auto
+
+
+
+
+
+
+
+.liveinternet-counter
+	position: absolute
+	width: 31px
+	height: 31px
+	top: -11px
+	right: -30px
 
 
 
