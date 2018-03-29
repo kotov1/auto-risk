@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name=“robots” content=“noindex,nofollow”>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" type="image/ico" href="img/favicon/favicon.ico">
+
+		<script type="text/javascript">
+			var sec=5;
+			function Sec() {
+
+				document.getElementById("sec").innerHTML=sec;
+				sec--;
+				if(sec==-1) {
+				location.replace("index.html")
+				}
+				setTimeout('Sec()',1000);
+			}
+
+		</script>
+
+		<noscript>
+			<meta http-equiv="refresh" content="5; index.html">
+		</noscript>
+
+		<title>AUTO RIKS</title>
+
+		<link rel="stylesheet" href="css/styles.css">
+
+		<!-- ROBOTO FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,900&amp;subset=cyrillic" rel="stylesheet">
+
+	</head>
+
+	<body>
+	
+	<div class="error-page">
+
+		<header class="my-line">
+			<div class="mycont">
+				<div class="myrow myxrow">
+
+					<div class="mycol">
+						<img class="mylogo" src="img/logo.png" alt="Логотип">
+						<div class="mylogo-text"><span class="mycolor">auto-riks</span> services</div>
+					</div>
+
+					<div class="mycol">
+						<div class="my-line-a">автосервис</div>
+						<div class="my-line-b">акпп центр</div>
+					</div>
+
+					<div class="mycol mycol-menu">
+						<div class="mymenu-wrapper">
+							<div class="mymenu-btn"></div>
+							<ul class="mymenu">
+								<li><a href="#">ремонт</a>
+								</li>
+								<li><a href="#">цены</a>
+								</li>
+								<li><a href="#">оборудование</a>
+								</li>
+								<li><a href="#">о нас</a>
+								</li>
+								<li><a href="#">медиа</a>
+								</li>
+								<li><a href="#">выбрать сервис</a>
+								</li>
+								<li><span>контакты</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="mycol">
+						<div class="my-line-call">
+							<div class="mytel">
+								<noindex><a href="tel:74955555555">+7 (495) 555-55-55</a></noindex>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</header>
+
+
+		<div class="error-page-content">
+			<div class="error-page-number">404</div>
+			<div class="error-page-text">Страница не найдена</div>
+			<div class="error-page-redirect">Вы будете перенаправлены на главную страницу через <span id="sec">5</span> секунд</div>
+		</div>
+
+
+
+	</div>
+
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js"><\/script>')</script>
+	<script src="js/scripts.js"></script>
+	<script>
+		Sec();
+	</script>
+	
+	</body>
+</html>

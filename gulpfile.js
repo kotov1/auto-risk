@@ -19,7 +19,10 @@ gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
 		'app/libs/slick-carousel/slick/slick.min.js',
-		'app/libs/jquery.inputmask.js',
+		'app/libs/Inputmask/dist/min/inputmask/inputmask.min.js',
+		'app/libs/Inputmask/dist/min/jquery.inputmask.bundle.min.js',
+		'app/libs/Inputmask/dist/min/inputmask/inputmask.phone.extensions.min.js',
+		'app/libs/copyright.min.js',
 		'app/js/common.js'
 		])
 	.pipe(concat('scripts.js'))
@@ -75,6 +78,7 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 
 	var buildJs = gulp.src([
 		'app/js/scripts.js',
+		'app/js/jquery-3.3.1.min.js',
 		]).pipe(gulp.dest('dist/js'));
 
 	var buildFonts = gulp.src([

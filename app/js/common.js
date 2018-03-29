@@ -22,7 +22,7 @@ $(function() {
 
 
 	if(($('.phone').length > 0)){
-		$('.phone').inputmask("+7 (999) 999-99-99");
+		$('.phone').inputmask({"mask": "+7 (999) 999-99-99"});
 	}
 	if(($('.popup-date').length > 0)){
 		$('.popup-date').inputmask("99.99.99");
@@ -215,6 +215,10 @@ $(function() {
 			type: 'inline'
 		}
 	});
+
+
+
+	$('body').copyright();
 
 
 });
